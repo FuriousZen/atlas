@@ -1,0 +1,8 @@
+{"id":"recent","question":"new science today?","filters":{"topic":"reranking"},"gold_paper_ids":["seed:reranking:0"]}
+{"id":"negative","question":"most damning scientific discoveries published?","filters":{"topic":"retrieval"},"gold_paper_ids":["seed:retrieval:0"]}
+{"id":"methods-rerank","question":"reranking methods that compare baselines","filters":{"topic":"reranking"},"gold_paper_ids":["seed:reranking:1","seed:reranking:2"]}
+{"id":"methods-retrieval","question":"retrieval methods evidence and results","filters":{"topic":"retrieval"},"gold_paper_ids":["seed:retrieval:1","seed:retrieval:2"]}
+{"id":"recency","question":"latest research published this week","filters":{"topic":"reranking"},"gold_paper_ids":["seed:reranking:0","seed:reranking:1"]}
+{"id":"limits","question":"papers reporting limitations and failed baselines","filters":{"topic":"retrieval"},"gold_paper_ids":["seed:retrieval:0","seed:retrieval:3"]}
+{"id":"high-citation","question":"most cited reranking study","filters":{"topic":"reranking","min_citations":100},"gold_paper_ids":["seed:reranking:29","seed:reranking:28"]}
+{"id":"methods-crosstopic","question":"synthetic study methods and evidence","filters":{},"gold_paper_ids":["seed:reranking:5","seed:retrieval:5"]}

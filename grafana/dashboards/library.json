@@ -1,0 +1,15 @@
+{
+  "uid": "atlas-library",
+  "title": "Atlas library health",
+  "schemaVersion": 39,
+  "version": 2,
+  "refresh": "30s",
+  "panels": [
+    {"id": 1, "type": "stat", "title": "Retained papers", "gridPos": {"h": 4, "w": 6, "x": 0, "y": 0}, "targets": [{"expr": "atlas_store_papers"}]},
+    {"id": 2, "type": "stat", "title": "Retained chunks", "gridPos": {"h": 4, "w": 6, "x": 6, "y": 0}, "targets": [{"expr": "atlas_store_chunks"}]},
+    {"id": 3, "type": "timeseries", "title": "Papers kept and evicted", "gridPos": {"h": 8, "w": 12, "x": 0, "y": 4}, "targets": [{"expr": "rate(atlas_papers_kept_total[15m])", "legendFormat": "kept"}, {"expr": "rate(atlas_evictions_total[15m])", "legendFormat": "evicted"}]},
+    {"id": 4, "type": "timeseries", "title": "Papers dropped before indexing", "gridPos": {"h": 8, "w": 12, "x": 12, "y": 4}, "targets": [{"expr": "sum(rate(atlas_papers_dropped_threshold_total[15m])) by (topic)", "legendFormat": "threshold {{topic}}"}, {"expr": "sum(rate(atlas_papers_dropped_dedupe_total[15m])) by (topic)", "legendFormat": "dedupe {{topic}}"}]},
+    {"id": 5, "type": "timeseries", "title": "Store vs bound", "gridPos": {"h": 8, "w": 12, "x": 0, "y": 12}, "targets": [{"expr": "atlas_store_papers", "legendFormat": "papers"}, {"expr": "1500", "legendFormat": "max papers"}, {"expr": "atlas_store_chunks", "legendFormat": "chunks"}, {"expr": "15000", "legendFormat": "max chunks"}, {"expr": "atlas_store_bytes", "legendFormat": "bytes"}, {"expr": "2147483648", "legendFormat": "max bytes"}]},
+    {"id": 6, "type": "timeseries", "title": "Eviction age days", "gridPos": {"h": 8, "w": 12, "x": 12, "y": 12}, "targets": [{"expr": "histogram_quantile(0.95, sum by (le) (rate(atlas_eviction_age_days_bucket[15m])))", "legendFormat": "p95 age days"}, {"expr": "sum(rate(atlas_eviction_age_days_sum[15m])) / sum(rate(atlas_eviction_age_days_count[15m]))", "legendFormat": "mean age days"}]}
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "name": "atlas-web",
+  "private": true,
+  "type": "module",
+  "scripts": {"dev": "vite --host 0.0.0.0", "build": "vite build"},
+  "dependencies": {"@vitejs/plugin-react": "6.1.1", "vite": "8.2.2", "react": "19.2.8", "react-dom": "19.2.8"},
+  "devDependencies": {}
+}

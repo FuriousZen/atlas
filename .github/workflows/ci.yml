@@ -1,0 +1,36 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install ruff==0.9.6
+      - run: ruff check app tests
+
+  test:
+    runs-on: ubuntu-latest
+    env: {OMP_NUM_THREADS: 4}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install -e .[dev]
+      - run: OMP_NUM_THREADS=4 pytest -q
+
+  eval-smoke:
+    runs-on: ubuntu-latest
+    env: {OMP_NUM_THREADS: 4}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install -e .[dev]
+      - run: python scripts/seed_topics.py --topics reranking:80,retrieval:50 --papers 5
+      - run: python -m app.eval.harness --dataset eval/datasets/atlas_qa.jsonl --out perf/results/eval-ci.json

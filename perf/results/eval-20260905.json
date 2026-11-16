@@ -1,0 +1,248 @@
+{
+  "questions": 8,
+  "hit_at_1": 0.125,
+  "hit_at_5": 0.125,
+  "hit_at_10": 0.125,
+  "faithfulness_mean": 1.0,
+  "p50_ms": 5.308,
+  "p95_ms": 8.312,
+  "provider": "atlas-stub-heuristic",
+  "models": [
+    "atlas-stub-heuristic"
+  ],
+  "elapsed_ms": 46.11,
+  "per_query_ms": [
+    9.236,
+    5.344,
+    5.169,
+    5.272,
+    5.372,
+    5.012,
+    4.061,
+    6.596
+  ],
+  "rows": [
+    {
+      "id": "recent",
+      "ranked": [
+        "seed:reranking:29",
+        "seed:reranking:28",
+        "seed:reranking:27",
+        "seed:reranking:26",
+        "seed:reranking:25"
+      ],
+      "hit_at_1": false,
+      "hit_at_5": false,
+      "hit_at_10": false,
+      "hit": false,
+      "found": [
+        "seed:reranking:25",
+        "seed:reranking:26",
+        "seed:reranking:27",
+        "seed:reranking:28",
+        "seed:reranking:29"
+      ],
+      "expected": [
+        "seed:reranking:0"
+      ],
+      "faithfulness": 1.0,
+      "model": "atlas-stub-heuristic",
+      "elapsed_ms": 9.236
+    },
+    {
+      "id": "negative",
+      "ranked": [
+        "seed:retrieval:29",
+        "seed:retrieval:28",
+        "seed:retrieval:27",
+        "seed:retrieval:26",
+        "seed:retrieval:25"
+      ],
+      "hit_at_1": false,
+      "hit_at_5": false,
+      "hit_at_10": false,
+      "hit": false,
+      "found": [
+        "seed:retrieval:25",
+        "seed:retrieval:26",
+        "seed:retrieval:27",
+        "seed:retrieval:28",
+        "seed:retrieval:29"
+      ],
+      "expected": [
+        "seed:retrieval:0"
+      ],
+      "faithfulness": 1.0,
+      "model": "atlas-stub-heuristic",
+      "elapsed_ms": 5.344
+    },
+    {
+      "id": "methods-rerank",
+      "ranked": [
+        "seed:reranking:29",
+        "seed:reranking:28",
+        "seed:reranking:27",
+        "seed:reranking:26",
+        "seed:reranking:25"
+      ],
+      "hit_at_1": false,
+      "hit_at_5": false,
+      "hit_at_10": false,
+      "hit": false,
+      "found": [
+        "seed:reranking:25",
+        "seed:reranking:26",
+        "seed:reranking:27",
+        "seed:reranking:28",
+        "seed:reranking:29"
+      ],
+      "expected": [
+        "seed:reranking:1",
+        "seed:reranking:2"
+      ],
+      "faithfulness": 1.0,
+      "model": "atlas-stub-heuristic",
+      "elapsed_ms": 5.169
+    },
+    {
+      "id": "methods-retrieval",
+      "ranked": [
+        "seed:retrieval:29",
+        "seed:retrieval:28",
+        "seed:retrieval:27",
+        "seed:retrieval:26",
+        "seed:retrieval:25"
+      ],
+      "hit_at_1": false,
+      "hit_at_5": false,
+      "hit_at_10": false,
+      "hit": false,
+      "found": [
+        "seed:retrieval:25",
+        "seed:retrieval:26",
+        "seed:retrieval:27",
+        "seed:retrieval:28",
+        "seed:retrieval:29"
+      ],
+      "expected": [
+        "seed:retrieval:1",
+        "seed:retrieval:2"
+      ],
+      "faithfulness": 1.0,
+      "model": "atlas-stub-heuristic",
+      "elapsed_ms": 5.272
+    },
+    {
+      "id": "recency",
+      "ranked": [
+        "seed:reranking:29",
+        "seed:reranking:28",
+        "seed:reranking:27",
+        "seed:reranking:26",
+        "seed:reranking:25"
+      ],
+      "hit_at_1": false,
+      "hit_at_5": false,
+      "hit_at_10": false,
+      "hit": false,
+      "found": [
+        "seed:reranking:25",
+        "seed:reranking:26",
+        "seed:reranking:27",
+        "seed:reranking:28",
+        "seed:reranking:29"
+      ],
+      "expected": [
+        "seed:reranking:0",
+        "seed:reranking:1"
+      ],
+      "faithfulness": 1.0,
+      "model": "atlas-stub-heuristic",
+      "elapsed_ms": 5.372
+    },
+    {
+      "id": "limits",
+      "ranked": [
+        "seed:retrieval:29",
+        "seed:retrieval:28",
+        "seed:retrieval:27",
+        "seed:retrieval:26",
+        "seed:retrieval:25"
+      ],
+      "hit_at_1": false,
+      "hit_at_5": false,
+      "hit_at_10": false,
+      "hit": false,
+      "found": [
+        "seed:retrieval:25",
+        "seed:retrieval:26",
+        "seed:retrieval:27",
+        "seed:retrieval:28",
+        "seed:retrieval:29"
+      ],
+      "expected": [
+        "seed:retrieval:0",
+        "seed:retrieval:3"
+      ],
+      "faithfulness": 1.0,
+      "model": "atlas-stub-heuristic",
+      "elapsed_ms": 5.012
+    },
+    {
+      "id": "high-citation",
+      "ranked": [
+        "seed:reranking:29",
+        "seed:reranking:28",
+        "seed:reranking:27",
+        "seed:reranking:26",
+        "seed:reranking:25"
+      ],
+      "hit_at_1": true,
+      "hit_at_5": true,
+      "hit_at_10": true,
+      "hit": true,
+      "found": [
+        "seed:reranking:25",
+        "seed:reranking:26",
+        "seed:reranking:27",
+        "seed:reranking:28",
+        "seed:reranking:29"
+      ],
+      "expected": [
+        "seed:reranking:28",
+        "seed:reranking:29"
+      ],
+      "faithfulness": 1.0,
+      "model": "atlas-stub-heuristic",
+      "elapsed_ms": 4.061
+    },
+    {
+      "id": "methods-crosstopic",
+      "ranked": [
+        "seed:reranking:29",
+        "seed:reranking:28",
+        "seed:reranking:27",
+        "seed:reranking:26",
+        "seed:reranking:25"
+      ],
+      "hit_at_1": false,
+      "hit_at_5": false,
+      "hit_at_10": false,
+      "hit": false,
+      "found": [
+        "seed:reranking:25",
+        "seed:reranking:26",
+        "seed:reranking:27",
+        "seed:reranking:28",
+        "seed:reranking:29"
+      ],
+      "expected": [
+        "seed:reranking:5",
+        "seed:retrieval:5"
+      ],
+      "faithfulness": 1.0,
+      "model": "atlas-stub-heuristic",
+      "elapsed_ms": 6.596
+    }
+  ]
+}

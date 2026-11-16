@@ -1,0 +1,19 @@
+apiVersion: 1
+datasources:
+  - name: Atlas Prometheus
+    uid: atlas-prometheus
+    type: prometheus
+    access: proxy
+    url: http://prometheus:9090
+    isDefault: true
+  - name: Atlas Postgres
+    uid: atlas-postgres
+    type: postgres
+    access: proxy
+    url: postgres:5432
+    user: atlas
+    secureJsonData:
+      password: ${ATLAS_POSTGRES_PASSWORD}
+    jsonData:
+      database: atlas
+      sslmode: disable

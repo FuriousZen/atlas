@@ -1,0 +1,13 @@
+{
+  "uid": "atlas-retrieval",
+  "title": "Atlas retrieval quality",
+  "schemaVersion": 39,
+  "version": 2,
+  "refresh": "30s",
+  "panels": [
+    {"id": 1, "type": "timeseries", "title": "Agent node latency", "gridPos": {"h": 8, "w": 12, "x": 0, "y": 0}, "targets": [{"expr": "histogram_quantile(0.95, sum by (le, node) (rate(atlas_node_latency_seconds_bucket[15m])))", "legendFormat": "{{node}} p95"}]},
+    {"id": 2, "type": "timeseries", "title": "HTTP requests", "gridPos": {"h": 8, "w": 12, "x": 12, "y": 0}, "targets": [{"expr": "sum(rate(atlas_requests_total[15m])) by (path, status)", "legendFormat": "{{path}} {{status}}"}]},
+    {"id": 3, "type": "timeseries", "title": "LLM elapsed by backend", "gridPos": {"h": 8, "w": 12, "x": 0, "y": 8}, "targets": [{"expr": "histogram_quantile(0.95, sum by (le, backend) (rate(atlas_llm_elapsed_ms_bucket[15m])))", "legendFormat": "{{backend}} p95"}, {"expr": "histogram_quantile(0.50, sum by (le, backend) (rate(atlas_llm_elapsed_ms_bucket[15m])))", "legendFormat": "{{backend}} p50"}]},
+    {"id": 4, "type": "timeseries", "title": "Embedding cache hits", "gridPos": {"h": 8, "w": 12, "x": 12, "y": 8}, "targets": [{"expr": "sum(rate(atlas_embedding_cache_hit_total[15m])) by (tier)", "legendFormat": "{{tier}}"}]}
+  ]
+}
